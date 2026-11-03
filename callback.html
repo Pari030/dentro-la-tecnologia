@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Accesso · Dentro la Tecnologia</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<h1>Accesso completato</h1>
+<p id="msg" class="muted">Copia tutto l'indirizzo di questa pagina e incollalo dove te lo chiede <code>publish_auth.py</code>.</p>
+<p><input id="url" readonly style="width:100%;font:inherit;padding:8px" aria-label="Indirizzo da copiare"></p>
+<script>
+  var u = document.getElementById("url");
+  u.value = location.href;
+  if (!new URLSearchParams(location.search).get("code")) {
+    document.getElementById("msg").textContent = "Nessun codice in questo indirizzo: l'accesso non è andato a buon fine, riprova.";
+  }
+  u.addEventListener("focus", function () { u.select(); });
+</script>
+<footer><a href="./">Home</a> · <a href="privacy.html">Privacy</a> · <a href="termini.html">Termini</a></footer>
+</main></body></html>
